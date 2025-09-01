@@ -1,34 +1,33 @@
-import dotenv from 'dotenv';
-import express, {json, urlencoded, type Express} from 'express'
-import logger from './config/logger.ts';
+import dotenv from "dotenv";
+import express, { Application, json, urlencoded } from "express";
+import { requestTime } from "./shared/middlewares/request-time.ts";
+import { logger } from "./config/logger.ts";
 
-export class App{
-	private app: Express;
-	private port: number
+export class App {
+	private _app: express.Application = express();
 
-	constructor(port: number = 3000){
-		this.port = port;
-		this.app = express();
+	get app(): Application {
+		return this._app;
 	}
 
-	init():void{
-		this.config();
-		this.routes();
-
-		this.app.listen(this.port,()=>{
-			logger.info(`Server running in Port ${this.port}`)
-			logger.info(`http://localhost:${this.port}`)
-		})
+	routes(): void {
+		this.app.use("/v1", (req, res) => res.status(200).send({ message: "API running for more information visit http://github.com/Nicolas121221" }));
 	}
 
-	routes():void{
-		this.app.use('/', (req,res) => res.send({msg:"hello world"}))
-	};
+	middlewares(): void {
+		this.app.use(requestTime);
+	}
+	configure(): void {
+		this.app.use(urlencoded({ extended: true }));
+		this.app.use(json());
+		dotenv.config({ override: false, quiet: true });
+	}
 
-	config(){
-		this.app.use(urlencoded({extended:true}))
-		this.app.use(json())
-		dotenv.config();
+	listen(port: number) {
+		this.app.listen(port, () => {
+			logger.info(`Server running in Port ${port}`);
+			logger.info(`http://localhost:${port}/v1/`);
+		});
 	}
 }
 

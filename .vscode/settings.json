@@ -1,0 +1,29 @@
+{
+  "conventionalCommits.scopes": ["API"],
+  "terminal.integrated.profiles.windows": {
+    "Web": {
+      "source": "PowerShell",
+      "overrideName": true,
+      "icon": "remote-explorer",
+      "color": "terminal.ansiBlue"
+    },
+    "API": {
+      "source":"PowerShell",
+      "overrideName": true,
+      "icon": "server",
+      "color": "terminal.ansiGreen"
+    },
+    "Prisma": {
+      "path": "PowerShell",
+      "overrideName": true,
+      "icon": "database",
+      "color": "terminal.ansiRed"
+    },
+    "Git": {
+      "path": "Bash",
+      "overrideName": true,
+      "icon": "git-branch",
+      "color": "terminal.ansiYellow"
+    }
+  }
+}

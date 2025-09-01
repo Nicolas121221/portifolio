@@ -1,37 +1,46 @@
+import { resolve } from "path";
 import winston, { createLogger, format, type LoggerOptions } from "winston";
+const { combine, timestamp, printf, prettyPrint, colorize } = format;
 
-const { combine, timestamp, label, prettyPrint } = format;
+export class Logger {
+	private _logger: winston.Logger;
 
-const loggerOptions: LoggerOptions = {
-	format: combine(
-    label({ label: 'right meow!' }),
-    timestamp(),
-    prettyPrint()
-  ),
+	public readonly formatString = () =>
+		printf(({ level, message, timestamp }) => {
+			return `[${timestamp}] - ${level}: ${message}`;
+		});
 
-transports:[
-	new winston.transports.Console(),
-	new winston.transports.File({filename:'../logs/info.logs'})
-]
-};
+	private loggerOptions: LoggerOptions = {
+		level: "debug",
+		levels: winston.config.syslog.levels,
+		transports: [
+			new winston.transports.File({
+				filename: resolve(__dirname, "../../logs/system.log"),
+				format: combine(prettyPrint(), timestamp(), prettyPrint()),
+			}),
+			new winston.transports.Console({
+				format: combine(
+					prettyPrint(),
+					timestamp(),
+					colorize({ all: true }),
+					this.formatString(),
+				),
+			}),
+			new winston.transports.File({
+				filename: resolve(__dirname, "../../logs/errors.log"),
+				format: combine(prettyPrint(), timestamp(), prettyPrint()),
+				level: "error",
+			}),
+		],
+	};
 
-class Logger {
-	private loggerOptions: LoggerOptions;
-
-	constructor(loggerOptions: LoggerOptions) {
-		this.loggerOptions = loggerOptions;
-		this.init();
+	constructor() {
+		this._logger = createLogger(this.loggerOptions);
 	}
 
-	public init(): winston.Logger {
-		const logger: winston.Logger = createLogger(this.loggerOptions);
-
-		console.log(process.env.NODE_ENV);
-
-		return logger;
+	get loggeer(): winston.Logger {
+		return this._logger;
 	}
 }
 
-const logger = new Logger(loggerOptions)
-
-export default logger.init() ;
+export const logger = new Logger().loggeer;
