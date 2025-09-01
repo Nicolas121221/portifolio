@@ -1,0 +1,10 @@
+{
+	"endOfLine": "crlf",
+	"useTabs": true,
+	"singleQuote": false,
+	"trailingComma": "all",
+	"tabWidth": 4,
+	"semi": true,
+	"objectWrap": "preserve",
+	"quoteProps": "as-needed"
+}
