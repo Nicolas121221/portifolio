@@ -5,13 +5,13 @@
 			"source": "PowerShell",
 			"overrideName": true,
 			"icon": "remote-explorer",
-			"color": "terminal.ansiBlue"
+			"color": "terminal.ansiBlue",
 		},
 		"API": {
 			"source": "PowerShell",
 			"overrideName": true,
 			"icon": "server",
-			"color": "terminal.ansiGreen"
+			"color": "terminal.ansiGreen",
 		},
 		"Prisma": {
 			"path": "PowerShell",
@@ -20,7 +20,7 @@
 			"color": "terminal.ansiRed"
 		},
 		"Git": {
-			"path": "Bash",
+			"path": "Git Bash",
 			"overrideName": true,
 			"icon": "git-branch",
 			"color": "terminal.ansiYellow"
