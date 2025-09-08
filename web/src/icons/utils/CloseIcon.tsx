@@ -1,15 +1,13 @@
-import type { IconProps } from "../interfaces/IconProps";
+import type { SVGProps } from "react";
 
-export const CloseIcon = ({ strokeWidth, className, onClick }: IconProps) => {
+export const CloseIcon = (props: SVGProps<SVGSVGElement>) => {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
 			viewBox="0 0 24 24"
-			strokeWidth={strokeWidth}
 			stroke="currentColor"
-			className={className}
-			onClick={onClick}
+			{...props}
 		>
 			<path
 				strokeLinecap="round"

@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
-body{
-	@apply  min-w-screen min-h-screen bg-slate-700
+html{
+	@apply scroll-smooth
 }
 
-*::selection{
-	@apply bg-gray-900 text-gray-400 text-shadow-gray-900
+body {
+	@apply max-w-screen min-h-screen bg-slate-700;
+}
+
+* {
+	font-family: sans-serif;
 }
