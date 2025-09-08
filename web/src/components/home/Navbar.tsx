@@ -4,7 +4,7 @@ import { MobileMenu } from "./MobileMenu";
 import { ThemeIcon } from "../../icons/utils/ThemeIcon";
 
 export const Navbar = (): JSX.Element => {
-	const [isClicked, setIsClicked] = useState(false);
+	const [isOpened, setIsOpened] = useState(false);
 
 	return (
 		<>
@@ -13,7 +13,7 @@ export const Navbar = (): JSX.Element => {
 					<a href="#home">Nicolas121221</a>
 				</h1>
 				<section className="flex justify-center items-center">
-					<ul className="gap-4 items-center justify-center *:text-slate-400 *:hover:text-slate-100 *:duration-200 *:border-b-2 *:border-b-white/0 *:border- *:hover:border-b-slate-500 *:py-2 font-medium hidden sm:flex">
+					<ul className="gap-4 items-center justify-center *:text-slate-400 *:hover:text-slate-100 *:duration-200 *:border-b-2 *:border-b-white/0 *:hover:border-b-slate-500 *:py-2 font-medium hidden sm:flex">
 						<li>
 							<a href="#home">home</a>
 						</li>
@@ -24,17 +24,16 @@ export const Navbar = (): JSX.Element => {
 							<a href="#about-me">sobre mim</a>
 						</li>
 					</ul>
-						<ThemeIcon className="size-5 cursor-pointer ml-6 text-slate-600 duration-400 hover:text-white" />
+						<ThemeIcon className="size-5 cursor-pointer ml-6 text-slate-600 duration-400 hover:text-white hidden sm:block" />
 				</section>
 
 				<MenuIcon
-					strokeWidth={1.8}
 					className="sm:hidden size-6 hover:stroke-slate-100 stroke-slate-400 duration-200 cursor-pointer"
-					onClick={() => setIsClicked(!isClicked)}
+					onClick={() => setIsOpened(!isOpened)}
 				/>
 			</header>
-			{isClicked && (
-				<MobileMenu onClickCloseMenu={() => setIsClicked(!isClicked)} />
+			{isOpened && (
+				<MobileMenu onClickCloseMenu={() => setIsOpened(!isOpened)} />
 			)}
 		</>
 	);
