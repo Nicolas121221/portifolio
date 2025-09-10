@@ -8,10 +8,10 @@ export const ReactIcon = (props: SVGProps<SVGSVGElement>) => {
 			height="1em"
 			viewBox="0 0 16 16"
 			{...props}
+			stroke="currentColor"
 		>
 			<g
 				fill="none"
-				stroke="#91d7e3"
 				strokeLinecap="round"
 				strokeLinejoin="round"
 			>

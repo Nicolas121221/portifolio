@@ -7,7 +7,7 @@ export const CssIcon = (props: SVGProps<SVGSVGElement>) => {
 			width="0.88em"
 			height="1em"
 			viewBox="0 0 448 512"
-			fill="white"
+			fill="currentColor"
 			{...props}
 		>
 			<path
