@@ -7,7 +7,7 @@ interface props {
 
 export const MobileMenu = ({ onClickCloseMenu }: props) => {
 	return (
-		<section className="inset-0 flex justify-center items-center fixed bg-slate-900 z-50 sm:hidden">
+		<section className="inset-0 flex justify-center items-center fixed bg-ocean-900 z-50 sm:hidden">
 			<CloseIcon
 				strokeWidth={1.8}
 				className="stroke-white size-8 absolute top-5 right-5 hover:stroke-red-500 duration-300 cursor-pointer"

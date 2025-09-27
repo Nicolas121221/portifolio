@@ -1,9 +1,24 @@
 @import "tailwindcss";
 
-html{
-	@apply scroll-smooth
+html {
+	@apply scroll-smooth;
 }
 
 body {
 	@apply max-w-screen min-h-screen bg-slate-700;
+}
+
+@theme {
+	--font-sans: roboto, roboto-flex, open-sans, sans-serif;
+
+	--color-ocean-100: hsl(220, 40%, 90%);
+	--color-ocean-200: hsl(220, 40%, 80%);
+	--color-ocean-300: hsl(220, 40%, 70%);
+	--color-ocean-400: hsl(220, 40%, 60%);
+	--color-ocean-500: hsl(220, 40%, 50%);
+	--color-ocean-600: hsl(220, 40%, 30%);
+	--color-ocean-700: hsl(220, 40%, 20%);
+	--color-ocean-800: hsl(220, 40%, 15%);
+	--color-ocean-900: hsl(220, 40%, 10%);
+	--color-ocean-950: hsl(220, 40%, 5%);
 }
