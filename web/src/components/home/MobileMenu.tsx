@@ -13,9 +13,9 @@ export const MobileMenu = ({ onClickCloseMenu }: props) => {
 				className="stroke-white size-8 absolute top-5 right-5 hover:stroke-red-500 duration-300 cursor-pointer"
 				onClick={onClickCloseMenu}
 			/>
-			<ThemeIcon className="size-6 cursor-pointer ml-6 text-slate-400 duration-200 hover:text-slate-200 top-6 right-15 absolute" />
+			<ThemeIcon className="size-6 cursor-pointer ml-6 text-ocean-400 duration-200 hover:text-ocean-200 top-6 right-15 absolute" />
 			<div className="w-1/2">
-				<ul className="*:w-fit text-2xl text-slate-400 *:hover:text-white *:my-4 *:duration-200 *:border-b-2 *:border-transparent *:hover:border-slate-300">
+				<ul className="*:w-fit text-2xl text-ocean-400 *:hover:text-ocean-100 *:my-4 *:duration-200 *:border-b-2 *:border-transparent *:hover:border-ocean-400">
 					<li>
 						<a href="#home" onClick={onClickCloseMenu}>
 							home
@@ -27,7 +27,7 @@ export const MobileMenu = ({ onClickCloseMenu }: props) => {
 						</a>
 					</li>
 					<li>
-						<a href="#about-me" onClick={onClickCloseMenu}>
+						<a href="#about" onClick={onClickCloseMenu}>
 							sobre mim
 						</a>
 					</li>

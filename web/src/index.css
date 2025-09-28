@@ -5,20 +5,23 @@ html {
 }
 
 body {
-	@apply max-w-screen min-h-screen bg-slate-700;
+	@apply max-w-screen min-h-screen bg-ocean-900;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
 	--font-sans: roboto, roboto-flex, open-sans, sans-serif;
 
-	--color-ocean-100: hsl(220, 40%, 90%);
-	--color-ocean-200: hsl(220, 40%, 80%);
-	--color-ocean-300: hsl(220, 40%, 70%);
-	--color-ocean-400: hsl(220, 40%, 60%);
-	--color-ocean-500: hsl(220, 40%, 50%);
-	--color-ocean-600: hsl(220, 40%, 30%);
-	--color-ocean-700: hsl(220, 40%, 20%);
-	--color-ocean-800: hsl(220, 40%, 15%);
-	--color-ocean-900: hsl(220, 40%, 10%);
-	--color-ocean-950: hsl(220, 40%, 5%);
+	--color-ocean-50: oklch(0.955 0.01 267.41);
+	--color-ocean-100: oklch(0.91 0.021 268.45);
+	--color-ocean-200: oklch(0.816 0.045 269.94);
+	--color-ocean-300: oklch(0.722 0.07 268.85);
+	--color-ocean-400: oklch(0.627 0.094 268.23);
+	--color-ocean-500: oklch(0.532 0.122 266.82);
+	--color-ocean-600: oklch(0.454 0.102 267.14);
+	--color-ocean-700: oklch(0.377 0.082 267.14);
+	--color-ocean-800: oklch(0.288 0.059 267.84);
+	--color-ocean-900: oklch(0.198 0.032 266.89);
+	--color-ocean-950: oklch(0.147 0.018 272.55);
 }

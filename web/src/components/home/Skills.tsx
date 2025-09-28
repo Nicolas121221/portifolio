@@ -1,0 +1,10 @@
+import type { JSX } from "react";
+
+export const Skills = (): JSX.Element => {
+	return (
+		<section
+			className="h-screen w-full text-ocean-100 pt-15"
+			id="skills"
+		></section>
+	);
+};
