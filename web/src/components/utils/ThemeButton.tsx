@@ -11,10 +11,12 @@ export const ThemeButtton = (props: props): JSX.Element => {
 	const handleTheme = () => {
 		setTheme(!theme);
 		if (theme) {
-			document.documentElement.classList.add("dark");
+			localStorage.theme = "dark";
+			document.documentElement.setAttribute("data-theme", "dark")
 			return;
 		}
-		document.documentElement.classList.remove("dark");
+		localStorage.theme = "light";
+		document.documentElement.setAttribute("data-theme", "light");
 		return;
 	};
 

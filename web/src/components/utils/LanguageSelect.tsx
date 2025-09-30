@@ -14,7 +14,7 @@ export const LanguageSelect = (): JSX.Element => {
 
 	return (
 		<select
-			className="ml-5 border-ocean-400 border px-2 py-1 rounded text-sm bg-ocean-100 dark:bg-ocean-900 hidden md:block cursor-pointer"
+			className="ml-5 border-ocean-400/50 border px-2 py-1 rounded text-sm bg-ocean-100 dark:bg-ocean-900 hidden md:block cursor-pointer"
 			value={language}
 			onChange={handleLanguage}
 		>

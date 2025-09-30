@@ -11,7 +11,7 @@ export const Navbar = (): JSX.Element => {
 
 	return (
 		<>
-			<header className="scroll-m-10 flex justify-between items-center px-[10%] text-lg fixed top-0 right-0 left-0 z-50 text-ocean-800 dark:text-ocean-400 border-b-ocean-400 border-b backdrop-blur-md">
+			<header className="scroll-m-10 flex justify-between items-center px-[10%] text-lg fixed top-0 right-0 left-0 z-50 text-ocean-800 dark:text-ocean-400 border-b-ocean-400/50 border-b backdrop-blur-md">
 				<h1 className="font-bold py-1 hover:text-ocean-600 dark:hover:text-ocean-100">
 					<a href="#home">nicolas121221</a>
 				</h1>
