@@ -1,0 +1,25 @@
+@reference "../../index.css";
+
+label{
+	@apply cursor-pointer text-sm mt-2
+}
+
+input, textarea{
+	@apply p-1 rounded caret-ocean-500 w-xl my-1 border-white/30 focus:outline-ocean-100 outline-ocean-800 duration-100 outline
+}
+
+span{
+	@apply text-xs opacity-20
+}
+
+#phone{
+	@apply w-xs
+}
+
+#message {
+	@apply min-h-40 field-sizing-content
+}
+
+button{
+	@apply mt-10
+}

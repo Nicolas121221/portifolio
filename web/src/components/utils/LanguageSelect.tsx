@@ -1,5 +1,5 @@
 import { useState, type JSX } from "react";
-import { changeLanguage } from "../../utils/i18n";
+import { changeLanguage } from "../../i18n/i18n";
 import { useTranslation } from "react-i18next";
 
 export const LanguageSelect = (): JSX.Element => {
@@ -18,9 +18,9 @@ export const LanguageSelect = (): JSX.Element => {
 			value={language}
 			onChange={handleLanguage}
 		>
-			<option value="pt">{t("pt")}</option>
-			<option value="en">{t("en")}</option>
-			<option value="es">{t("es")}</option>
+			<option value="pt">português - {t("pt")}</option>
+			<option value="en">english - {t("en")}</option>
+			<option value="es">español - {t("es")}</option>
 		</select>
 	);
 };

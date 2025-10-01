@@ -5,7 +5,7 @@ html {
 }
 
 body {
-	@apply max-w-screen min-h-screen bg-ocean-900;
+	@apply max-w-full dark:bg-ocean-900 bg-ocean-100 min-h-screen;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
